@@ -28,7 +28,7 @@ const Window: React.FC<WindowProps> = ({ id, title, appName, onClose }) => {
   const AppComponent = dynamic(
     () => import(`@/app/apps/${appName.toLowerCase()}/page`),
     {
-      loading: () => <p>Loading...</p>,
+      loading: () => <p></p>,
     }
   );
 

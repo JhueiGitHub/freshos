@@ -9,13 +9,13 @@ export default function AppRenderer({ appName }: AppRendererProps) {
   const DynamicApp = dynamic(
     () => import(`../apps/${appName.toLowerCase()}/page`),
     {
-      loading: () => <p>Loading {appName}...</p>,
+      loading: () => <p>.</p>,
       ssr: false,
     }
   );
 
   return (
-    <Suspense fallback={<p>Loading {appName}...</p>}>
+    <Suspense fallback={<p></p>}>
       <DynamicApp />
     </Suspense>
   );
